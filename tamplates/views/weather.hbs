@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{>head}}
+</head>
+<body>
+    
+    {{>navbar}}
+    <!-- main header  -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+               <div class="main-content">
+                <form class="temp-form">
+                    <input type="text" id="cityName" placeholder=" Enter a city name" autocomplete="off">
+                   <input type="submit" value="Search" id="submitBtn">
+                </form>
+               </div>
+
+               <div class="tempInfo">
+                <div class="top-layer">
+                    <p id="day">Thursday</p>
+                    <p id="date">11 Aug</p>
+                </div>
+                <div class="main-layer ">
+                    <p id="city_name">Get Update</p>
+                    <div class="middle-layer data_hide">
+                        <p id="temp"><span id="temp_val">0</span>°C</p>
+                        <p id="temp_status"><i class="fa fa-cloud" ></i></p>
+                    </div>
+                </div>
+                <div class="top-layer bottom">
+                  
+                 <p> Feels like :<span id="feels_like">0</span>°C</p>
+                 <p>Humidity :<span id="humidity">0</span>%</p>
+                 <p >Wind Speed :<span id="wind_speed">0</span></p>
+                 <p >condition :<span id="condition">0</span></p>
+                  
+                </div>
+
+               </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- <footer> -->
+        {{>footer}}
+
+
+        <script src="/main.js"></script>
+        <script>
+            let date=document.getElementById("date");
+            const getCurrentDay=()=>{
+            const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            let currentTime=new Date();
+            days=weekday[currentTime.getDay()];
+            let day=document.getElementById("day")
+
+           day.innerText= days;
+        };
+        const getCurrentTime=()=>{
+            const months=["Jan","Feb","Mar","Apr","May","June","Jul","Aug","Sept","Oct","Nov","Dec"];
+            var currentTime=new Date();
+            var month= months[currentTime.getMonth()];
+            var date=currentTime.getDate();
+
+            let hours=currentTime.getHours();
+            let min=currentTime.getMinutes();
+
+            let mode="am";
+
+            if(hours> 11){
+                mode = "pm"
+                if(hours>12){
+                    hours-=12;
+                }
+            }
+            if(min<10){
+                min="0"+min;
+            } 
+            if(date<10){
+                date="0"+date;
+            }
+            
+
+            let now=month+"-"+date+"|"+hours+":"+min+" "+mode;
+            
+           return now;
+        }
+        getCurrentDay();
+        date.innerHTML=getCurrentTime();
+        </script>
+</body>
+</html>
