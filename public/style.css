@@ -258,15 +258,23 @@ body{
 }
 /* error page  */
 
+
+.container-fluid.main_header_error{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
 .row-error{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: auto;
 }
 
 
-.main_header_right {
+.main_header_error {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -275,14 +283,15 @@ body{
     margin-bottom: 30px;
     margin-top: 50px;
 }
-.main_header_right figure img{
+.main_header_error figure img{
     display: flex;
     margin: auto;
-    height: 400px;
-    width: 400px;
+    padding: 3rem;
+   width: 100%;
+   height: 100%;
 }
 
-.main_header_right .errormsg{
+.main_header_error .errormsg{
     display: flex;
     flex-direction:column ;
     align-items: center;
@@ -295,7 +304,7 @@ body{
     color: #211017;
 }
 .errormsg h1{
-    font-size: 40px;
+    font-size: 35px;
     color: #bf43e2;
     font-weight: 600;
 }
