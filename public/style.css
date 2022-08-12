@@ -264,6 +264,17 @@ body{
     align-items: center;
     justify-content: center;
 }
+
+
+.main_header_right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
 .main_header_right figure img{
     display: flex;
     margin: auto;
