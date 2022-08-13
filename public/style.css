@@ -200,6 +200,15 @@ body{
     align-items: center;
     border-radius: 1rem;
 }
+.top-layer-bottom{
+    width: 100%;
+    height: 20%;
+    background-color: #0f090b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem;
+}
 
 .top-layer p{
     color: pink;
@@ -207,7 +216,13 @@ body{
     padding: 1.5rem;
     font-size: 15px;
 }
-.top-layer.bottom {
+.top-layer-bottom p{
+    color: pink;
+    font-weight: 400;
+    padding: 1.5rem;
+    font-size: 15px;
+}
+.top-layer-bottom {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
