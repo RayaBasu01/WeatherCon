@@ -12,25 +12,25 @@
                 
                     <div class="row">
                         <div class="contact-form">
-                            <form>
+                            <form action="/contact" method="POST" >
                                
                                 <div class="row">
                                     <div class="input-group">
                                         <h3>Name:</h3>
-                                        <input type="text" placeholder="Enter your name" class="input-control" required>
+                                        <input type="text" placeholder="Enter your name" class="input-control" name="name">
                                     </div>
                                     <div class="input-group">
                                         <h3>E-mail:</h3>
-                                        <input type="email" placeholder="Enter your email" class="input-control" required>
+                                        <input type="email" placeholder="Enter your email" class="input-control" name="email">
                                     </div>
                                     <div class="input-group"> 
                                         <h3>Subject:</h3>
 
-                                        <input type="text" placeholder="Enter Subject" class="input-control" required>
+                                        <input type="text" placeholder="Enter Subject" class="input-control" name="subject">
                                     </div>
                                     <div class="input-group">
                                         <h3>Message:</h3>
-                                        <textarea placeholder=" Write a Message" class="input-control" required></textarea>
+                                        <textarea placeholder=" Write a Message" class="input-control" name="msg"></textarea>
                                     </div>
                                     <div class="submit-btn">
                                         <button type="submit" class="btn">Send Now</button>

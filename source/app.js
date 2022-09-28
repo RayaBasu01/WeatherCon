@@ -3,6 +3,12 @@ const path  = require('path');
 const app=express();
 const hbs = require("hbs");
 
+require("./db/conn");
+const weatherContact =require("./models/weatherContact");
+
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+
 const port = process.env.PORT || 3000;
 const tamplate_path=path.join(__dirname , "../tamplates/views")
 const partials_path=path.join(__dirname , "../tamplates/partials")
@@ -39,6 +45,26 @@ app.get("*",(req,res)=>{
     })
 
 });
+
+//data creating 
+app.post("/contact", async (req,res)=>{
+    try{
+        const contact=new weatherContact({
+            name:req.body.name,
+            email:req.body.email,
+            subject:req.body.subject,
+            msg:req.body.msg
+        })
+        const contactForm =  await contact.save();
+        res.status(201).render("index");
+        
+    }catch(er){
+        res.status(400).render("contact");
+    }
+
+});
+
+
 
 
 
