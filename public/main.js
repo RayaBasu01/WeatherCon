@@ -7,7 +7,8 @@ const feels_like=document.getElementById("feels_like");
 const humidity=document.getElementById("humidity");
 const wind_speed=document.getElementById("wind_speed");
 const condition=document.getElementById("condition");
-const data_hide=document.querySelector('.middle-layer')
+const data_hide=document.querySelector('.middle-layer');
+const bottom=document.querySelector('.top-layer.bottom');
 
 const getInfo=async(event)=>{
     event.preventDefault()
@@ -47,10 +48,13 @@ const getInfo=async(event)=>{
         temp_status.innerHTML= "<i class='fas fa-cloud' style='color: #fff'></i>"
          
        }
-       data_hide.classList.remove('data_hide');   
+       data_hide.classList.remove('data_hide'); 
+       bottom.classList.add('data_hide');
         } catch (error) {
             city_name.innerText=`Please Enter a City`;
             data_hide.classList.add('data_hide');
+            bottom.classList.add('data_hide');
+
         }
         
     }
