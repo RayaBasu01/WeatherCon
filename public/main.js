@@ -27,10 +27,10 @@ const getInfo=async(event)=>{
        city_name.innerText=`${arrData[0].name},${arrData[0].sys.country}`
        
        temp_val.innerText=arrData[0].main.temp;
-       feels_like.innerText= "Feels Like :"+arrData[0].main.feels_like +"°C";
-       humidity.innerText= "Humidity :"+arrData[0].main.humidity+"%";
-       wind_speed.innerText="Wind speed :"+arrData[0].wind.speed +"km/h";
-       condition.innerText="Condition :"+arrData[0].weather[0].description;
+       feels_like.innerText=arrData[0].main.feels_like;
+       humidity.innerText=arrData[0].main.humidity;
+       wind_speed.innerText=arrData[0].wind.speed;
+       condition.innerText=arrData[0].weather[0].description;
        
        const tempmood=arrData[0].weather[0].main;
        if(tempmood=="Clear"){
@@ -49,12 +49,8 @@ const getInfo=async(event)=>{
        }
        data_hide.classList.remove('data_hide');   
         } catch (error) {
-            city_name.innerText=`Please Enter a Valid  City`;
+            city_name.innerText=`Please Enter a City`;
             data_hide.classList.add('data_hide');
-            feels_like.innerText="";
-            humidity.innerText= "";
-            wind_speed.innerText="";
-            condition.innerText="";
         }
         
     }
