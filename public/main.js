@@ -17,6 +17,7 @@ const getInfo=async(event)=>{
     if(cityVal===""){
        city_name.innerText=`Please Enter a City`;
        data_hide.classList.add('data_hide');
+       bottom.classList.add('data_hide');
     }
     else{
         try {
@@ -49,7 +50,7 @@ const getInfo=async(event)=>{
          
        }
        data_hide.classList.remove('data_hide'); 
-       bottom.classList.add('data_hide');
+       bottom.classList.remove('data_hide');
         } catch (error) {
             city_name.innerText=`Please Enter a City`;
             data_hide.classList.add('data_hide');
